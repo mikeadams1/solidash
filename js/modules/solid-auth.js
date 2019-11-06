@@ -1,8 +1,15 @@
 import  '../../libs/solid-auth-client.bundle.js';
 import { slog } from '../helpers/system-messages.js';
+import { HelloAgent } from '../agents/HelloAgent.js';
+
+var agentSolidAuth;
 
 async function initSolid(){
   slog("init Solid")
+  agentSolidAuth = new HelloAgent('agentSolidAuth');
+
+  // send a message to agent1
+
 
   $('.login').click(function(){
     popupLogin();
@@ -16,10 +23,12 @@ async function initSolid(){
     if (!session){
       switchLogButtons(null)
       slog("not logged")
+      informAllAgents(null)
     }
     else{
       switchLogButtons(session)
       slog("user is "+session.webId)
+      informAllAgents(session)
     }
   })
   //testTBLFriends();
@@ -54,12 +63,23 @@ function switchLogButtons(session){
   if (session != null){
     $('.not-logged').addClass('d-none')
     $('.logged').removeClass('d-none')
-      $('.webid').text(session.webId)
+    $('.webid').text(session.webId)
   }else{
     $('.logged').addClass('d-none')
     $('.not-logged').removeClass('d-none')
     $('.webid').text("non connecté")
   }
+}
+
+function   informAllAgents(session){
+  var webId = session == null ? null : session.webId;
+  var allAgents = Object.keys(agentSolidAuth.connections[0].transport.agents);
+  console.log(allAgents)
+  allAgents.forEach(function (agent){
+    agentSolidAuth.send(agent, 'session changed '+webId);
+  })
+
+
 }
 
 export {  initSolid };
