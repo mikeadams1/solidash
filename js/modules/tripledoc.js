@@ -1,0 +1,1 @@
+import { fetchDocument } from 'tripledoc';
