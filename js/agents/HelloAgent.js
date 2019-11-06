@@ -1,4 +1,5 @@
 import  '../../libs/eve.custom.js';
+import { slog } from '../helpers/system-messages.js';
 
 function HelloAgent(id) {
   // execute super constructor
@@ -17,7 +18,7 @@ HelloAgent.prototype.sayHello = function(to) {
 };
 
 HelloAgent.prototype.receive = function(from, message) {
-  console.log(from + ' said: ' + JSON.stringify(message));
+  slog(from + ' said: ' + JSON.stringify(message));
 
   if (message.indexOf('Hello') === 0) {
     // reply to the greeting

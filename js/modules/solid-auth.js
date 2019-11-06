@@ -1,35 +1,25 @@
 import  '../../libs/solid-auth-client.bundle.js';
+import { slog } from '../helpers/system-messages.js';
 
 async function initSolid(){
-  console.log("init Solid")
+  slog("init Solid")
 
-  $('#login').click(function(){
-    console.log("login")
+  $('.login').click(function(){
     popupLogin();
   });
-  $('#logout').click(function(){
-    console.log("logout")
+  $('.logout').click(function(){
     solid.auth.logout()
     .then(() => alert('Goodbye!'));
   });
 
-
-  //switchLogButtons()
   solid.auth.trackSession(session => {
     if (!session){
-      console.log('The user is not logged in')
       switchLogButtons(null)
-      //  popupLogin();
     }
-
     else{
-      console.log(`The user is ${session.webId}`)
       switchLogButtons(session)
     }
-
   })
-
-
   //testTBLFriends();
 }
 
@@ -39,8 +29,6 @@ async function popupLogin() {
   let popupUri = 'https://solid.community/common/popup.html';
   if (!session)
   session = await solid.auth.popupLogin({ popupUri });
-  alert(`Logged in as ${session.webId}`);
-  //  switchLogButtons()
 }
 
 function testTBLFriends(){
@@ -49,7 +37,6 @@ function testTBLFriends(){
     var contentType = response.headers.get("content-type");
     if(contentType && contentType.indexOf("application/json") !== -1) {
       return response.json().then(function(json) {
-        // traitement du JSON
         console.log(json)
       });
     } else {
@@ -62,36 +49,15 @@ function testTBLFriends(){
 }
 
 function switchLogButtons(session){
-  console.log("switch log buttons", session)
-  console.log($('logged'))
-  console.log($('not-logged'))
   if (session != null){
     $('.not-logged').addClass('d-none')
     $('.logged').removeClass('d-none')
+      $('.webid').text(session.webId)
   }else{
     $('.logged').addClass('d-none')
     $('.not-logged').removeClass('d-none')
+    $('.webid').text("non connecté")
   }
-
-
 }
 
-
-
-
-
 export {  initSolid };
-
-
-/*.then(function(valeur) => {
-// Promesse tenue
-//console.log("Ok ",valeur)
-//console.log("BLOB ",valeur.blob())
-//console.log("JSON ",valeur.json())
-console.log("TEXT ",valeur.text())
-
-
-}, (raison) => {
-// Rejet de la promesse
-console.log("Erreur ",raison)
-});*/

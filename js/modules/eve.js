@@ -1,9 +1,9 @@
-
 import { HelloAgent } from '../agents/HelloAgent.js';
+import { slog } from '../helpers/system-messages.js';
 
 function initEve() {
   // create two agents
-  console.log("init eve")
+  slog("init eve")
   var agent1 = new HelloAgent('agent1');
   var agent2 = new HelloAgent('agent2');
 
