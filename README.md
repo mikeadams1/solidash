@@ -2,6 +2,12 @@
 https://forum.solidproject.org/t/conceptual-design-solid-better-user-experience/422
 
 
+# libs
+//https://solid.github.io/solid-auth-client/
+//https://github.com/inrupt/solid-lib-comparison
+tripledoc : https://vincenttunru.gitlab.io/tripledoc/docs/getting-started.html
+https://gitlab.com/vincenttunru/tripledoc/blob/master/src/index.ts
+
 
 
 
