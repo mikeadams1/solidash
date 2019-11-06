@@ -15,9 +15,11 @@ async function initSolid(){
   solid.auth.trackSession(session => {
     if (!session){
       switchLogButtons(null)
+      slog("not logged")
     }
     else{
       switchLogButtons(session)
+      slog("user is "+session.webId)
     }
   })
   //testTBLFriends();
