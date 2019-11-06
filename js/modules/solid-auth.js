@@ -1,4 +1,4 @@
-import  '../../node_modules/solid-auth-client/dist-lib/solid-auth-client.bundle.js';
+import  '../../libs/solid-auth-client.bundle.js';
 
 async function initSolid(){
   console.log("init Solid")
