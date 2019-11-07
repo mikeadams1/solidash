@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Solid Pod Dashboard</title>
+  <title>Solid Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -402,7 +402,7 @@
                     <div class="card shadow mb-4">
                       <!-- Card Header - Dropdown -->
                       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Portal</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Spoggy</h6>
                         <div class="dropdown no-arrow">
                           <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -418,7 +418,7 @@
                       </div>
                       <!-- Card Body -->
                       <div class="card-body">
-                      <div class="chart-pie pt-4 pb-2">
+                        <div class="chart-pie pt-4 pb-2">
                           <!--<canvas id="myPieChart"></canvas>-->
                         </div>
                         <div class="mt-4 text-center small">
@@ -439,8 +439,37 @@
 
                   <!-- BROWSER -->
                   <div class="col-xl-4 col-lg-5">
-                    <embed src="https://portal.inrupt.net/public/1-Browser.html" width="320" height="400" style="border:1px solid lightgray">">
-                     
+                    <div class="card shadow mb-4">
+                      <!-- Card Header - Dropdown -->
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Browser</h6>
+                        <div class="dropdown no-arrow">
+                          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">Dropdown Header:</div>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                        <div class="chart-pie pt-4 pb-2">
+                          <!--<canvas id="myPieChart"></canvas>-->
+                        </div>
+                        <div class="mt-4 text-center small">
+                          <span class="mr-2">
+                            <i class="fas fa-circle text-primary"></i> Direct
+                          </span>
+                          <span class="mr-2">
+                            <i class="fas fa-circle text-success"></i> Social
+                          </span>
+                          <span class="mr-2">
+                            <i class="fas fa-circle text-info"></i> Referral
                           </span>
                         </div>
                       </div>
@@ -470,7 +499,6 @@
                       <div class="card-body">
                         <pre class="pre-scrollable">
                           <ul class="todolist">
-                             <li><i class="far fa-square"></i>  show user mashlib data browser   </li>
                             <li><i class="far fa-square"></i>  show user profile   </li>
                             <li><i class="far fa-square"></i>  show spoggy graph of user POD   </li>
                             <li><i class="far fa-square"></i>  show browser for user POD  </li>
@@ -911,8 +939,6 @@
 
 <!--<script src="https://solid.github.io/solid-auth-client/dist/solid-auth-client.bundle.js"></script>-->
 <script>
-
-
 </script>
 <script type="module" src="js/main.js"></script>
 
