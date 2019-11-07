@@ -1,5 +1,7 @@
 This Project is forked and is a UX bootstrap template being edited by mikeadams1.
 See it [live on github pages](https://mikeadams1.github.io/solidash/index.html#)
+See Jquery [live](https://mikeadams1.github.io/solidash/jquery.html#)
+See Sparql-Fiddle [live](https://mikeadams1.github.io/solidash/sparql.html#)
 
 # dashboard for solid
 https://forum.solidproject.org/t/conceptual-design-solid-better-user-experience/422
